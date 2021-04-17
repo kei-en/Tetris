@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
   // TODO: we can also get the grid size from user
   const GRID_WIDTH = 10
   const GRID_HEIGHT = 20
@@ -8,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = createGrid();
   let squares = Array.from(grid.querySelectorAll('div'))
   const startBtn = document.querySelector('.button')
+  const easyBtn = document.querySelector('#easy')
+  const mediumBtn = document.querySelector('#medium')
+  const difficultBtn = document.querySelector('#difficult')
   const hamburgerBtn = document.querySelector('.toggler')
   const menu = document.querySelector('.menu')
   const span = document.getElementsByClassName('close')[0]
@@ -113,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let current = theTetrominoes[random][currentRotation]
 
 
-  //move the Tetromino moveDown
+  //move the Tetromino down
   let currentPosition = 4
   //draw the shape
   function draw() {
@@ -151,7 +153,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  //move left and prevent collisions with shapes moving left
+  easyBtn.addEventListener('click', () => {
+    difficulty(1000)
+    menu.style.display = 'none'
+  })
+
+  mediumBtn.addEventListener('click', () => {
+    difficulty(500)
+    menu.style.display = 'none'
+  })
+  
+  difficultBtn.addEventListener('click', () => {
+    difficulty(200)
+    menu.style.display = 'none'
+  })
+
+  function difficulty(interval) {
+      draw()
+      timerId = setInterval(moveDown, interval)
+      nextRandom = Math.floor(Math.random() * theTetrominoes.length)
+      displayShape()
+  }
+
+  //move right and prevent collisions with shapes moving right
   function moveright() {
     undraw()
     const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1)
@@ -162,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     draw()
   }
 
-  //move right and prevent collisions with shapes moving right
+  //move left and prevent collisions with shapes moving left
   function moveleft() {
     undraw()
     const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
@@ -264,5 +288,3 @@ document.addEventListener('DOMContentLoaded', () => {
   span.addEventListener('click', () => {
     menu.style.display = 'none'
   })
-
-})
