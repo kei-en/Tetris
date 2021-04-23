@@ -22,6 +22,10 @@
   let lines = 0
   let timerId
   let nextRandom = 0
+  let upBtn = document.querySelector('.upBtn')
+  let rightBtn = document.querySelector('.rightBtn')
+  let downBtn = document.querySelector('.downBtn')
+  let leftBtn = document.querySelector('.leftBtn')
   const colors = [
     'url(images/blue_block.png)',
     'url(images/pink_block.png)',
@@ -68,6 +72,22 @@
     else if (e.keyCode === 40)
       moveDown()
   }
+
+  upBtn.addEventListener('click', () => {
+    rotate()
+  })
+
+  rightBtn.addEventListener('click', () => {
+    moveright()
+  })
+
+  downBtn.addEventListener('click', () => {
+    moveDown()
+  })
+
+  leftBtn.addEventListener('click', () => {
+    moveleft()
+  })
 
   // the classical behavior is to speed up the block if down button is kept pressed so doing that
   document.addEventListener('keydown', control)
@@ -232,6 +252,7 @@
     if (current.some(index => squares[currentPosition + index].classList.contains('block2'))) {
       scoreDisplay.innerHTML = 'end'
       clearInterval(timerId)
+      setTimeout("location.reload()", 3000)
     }
   }
 
