@@ -119,7 +119,8 @@ div {
   background-color: #d8edea;
 }
 
-.button {
+.button,
+.btn {
   position: relative;
   width: 22rem;
   height: 2.2rem;
@@ -142,7 +143,8 @@ div {
     0 4px 2px rgba(0, 0, 0, 0.5);
 }
 
-.button:before {
+.button:before,
+.btn:before {
   background: #f0f0f0;
   background-image: linear-gradient(#d0d0d0, #f0f0f0);
   border-radius: 5px;
@@ -156,25 +158,48 @@ div {
   z-index: -1;
 }
 
-.button:active {
+.button:active,
+.btn:active {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
     0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   top: 5px;
 }
 
-.button:active:before {
+.button:active:before,
+.btn:active:before {
   top: -11px;
   bottom: -5px;
   content: "";
 }
 
-.button:hover {
+.button:hover,
+.btn:hover {
   background: #f66c7b;
   background-image: linear-gradient(top, #d25068, #f66c7b);
 }
 
 .end {
   background-image: url(/Users/limit/development/Tetris/images/blue_block.png);
+}
+
+.btn {
+  width: 6rem;
+  display: inline-block;
+  margin: 10px;
+}
+
+.difficulty {
+	width: 8rem;
+	line-height: 19px;
+	display: inline-block;
+	margin: 15px;
+  box-shadow: none;
+  background-image: none;
+  border: none;
+}
+
+.difficulty:before {
+  display: none;
 }
 
 .display {
