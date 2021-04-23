@@ -1,10 +1,4 @@
-:root {
-  /* default font size in browsers is 16px = 1em, we make
-     things easier for us and make 10px our base size.
-     We have 10/16 = 0.625 = 1rem as it is set on root element.
-     So 1rem is now 10px throughout our stylesheet.*/
-  font-size: 1em;
-}
+
 
 * {
   box-sizing: border-box;
