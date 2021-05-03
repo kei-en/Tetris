@@ -1,4 +1,10 @@
-
+:root {
+  /* default font size in browsers is 16px = 1em, we make
+     things easier for us and make 10px our base size.
+     We have 10/16 = 0.625 = 1rem as it is set on root element.
+     So 1rem is now 10px throughout our stylesheet.*/
+  font-size: 0.625em;
+}
 
 * {
   box-sizing: border-box;
@@ -113,8 +119,7 @@ div {
   background-color: #d8edea;
 }
 
-.button,
-.btn {
+.button {
   position: relative;
   width: 22rem;
   height: 2.2rem;
@@ -137,8 +142,7 @@ div {
     0 4px 2px rgba(0, 0, 0, 0.5);
 }
 
-.button:before,
-.btn:before {
+.button:before {
   background: #f0f0f0;
   background-image: linear-gradient(#d0d0d0, #f0f0f0);
   border-radius: 5px;
@@ -152,48 +156,54 @@ div {
   z-index: -1;
 }
 
-.button:active,
-.btn:active {
+.button:active {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
     0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   top: 5px;
 }
 
-.button:active:before,
-.btn:active:before {
+.button:active:before {
   top: -11px;
   bottom: -5px;
   content: "";
 }
 
-.button:hover,
-.btn:hover {
+.button:hover {
   background: #f66c7b;
   background-image: linear-gradient(top, #d25068, #f66c7b);
 }
 
+.difficulty {
+  position: relative;
+  width: 12rem;
+  height: 2.6rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 23px;
+  font-size: 10px;
+  display: inline-block;
+  margin: 30px;
+  text-shadow: -1px -1px 0 #a84155;
+  background: #d25068;
+  border: 1px solid #d25068;
+  width: 12rem;
+  cursor: pointer;
+}
+
+.difficulty:hover {background: #f66c7b;}
+
+@media only screen and (max-width: 600px) {
+  .difficulty {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .end {
   background-image: url(/Users/limit/development/Tetris/images/blue_block.png);
-}
-
-.btn {
-  width: 6rem;
-  display: inline-block;
-  margin: 10px;
-}
-
-.difficulty {
-	width: 8rem;
-	line-height: 19px;
-	display: inline-block;
-	margin: 15px;
-  box-shadow: none;
-  background-image: none;
-  border: none;
-}
-
-.difficulty:before {
-  display: none;
 }
 
 .display {
@@ -347,4 +357,44 @@ div {
 .close {
   border-radius: 5px;
   color: rgba(24, 39, 51, 0.85);
+}
+
+/* UI control buttons */
+#wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 50px 0 10px 20px;
+}
+
+#controls {
+  display: inline-grid;
+  grid-column-gap: 0;
+  align-self: end;
+}
+
+.upBtn {
+  grid-column-start: 2;
+}
+
+.leftBtn {
+  grid-column-start: 1;
+}
+
+.rightBtn {
+  grid-column-start: 3;
+}
+
+.btn {
+  background-color: #d25068;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: #d0d0d0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  border-radius: 50%;
 }

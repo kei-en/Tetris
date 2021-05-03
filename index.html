@@ -6,6 +6,8 @@
   <title>Tetris!</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ddfc574031.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
 <body>
@@ -21,9 +23,9 @@
           and <b class="key">RIGHT</b> to <br> move across the board. Pressing <b class="key">DOWN</b> will speed up the
           tetromino.</p>
         <button class="close fw-400">X</button><br>
-        <button class="difficulty btn t-ucase" id="easy">Easy</button>
-        <button class="difficulty btn t-ucase" id="medium">Medium</button>
-        <button class="difficulty btn t-ucase" id="difficult">Difficult</button>
+        <button class="difficulty t-ucase" id="easy">Easy</button>
+        <button class="difficulty t-ucase" id="medium">Medium</button>
+        <button class="difficulty t-ucase" id="difficult">Difficult</button>
       </div>
     </div>
   </div>
@@ -44,12 +46,16 @@
       </div>
       <button class="button t-ucase" href="#">Start / Pause</button>
       <small class='footer t-ucase'>made with love by Kei En</small><br>
-        <button class="upBtn btn">ROTATE</button>
-        <button class="rightBtn btn">RIGHT</button><br>
-        <button class="downBtn btn">DOWN</button>
-        <button class="leftBtn btn">LEFT</button>
     </section>
   </main>
+  <div id="wrapper">
+    <div id="controls">
+      <button class="upBtn btn"><i class="fas fa-caret-up"></i></button>
+      <button class="leftBtn btn"><i class="fas fa-caret-left"></i></button>    
+      <button class="downBtn btn"><i class="fas fa-caret-down"></i></button>
+      <button class="rightBtn btn"><i class="fas fa-caret-right"></i></button>
+    </div>
+  </div>
   <script src="app.js" charset="utf-8"></script>
 </body>
 
