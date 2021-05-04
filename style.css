@@ -365,6 +365,7 @@ div {
   justify-content: center;
   padding: 20px;
   margin: 50px 0 10px 20px;
+  right: 0;
 }
 
 #controls {
@@ -397,4 +398,16 @@ div {
   font-size: 20px;
   margin: 4px 2px;
   border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px){
+  #wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  #wrapper {
+    margin-top: 70px;
+  }
 }
