@@ -331,31 +331,27 @@ div {
   color: rgba(24, 39, 51, 0.85);
 }
 
+.control-icon{
+  padding-top: 3px;
+  margin: 5px;
+  height: 20px;
+  width: 20px;
+  background-color: #d25068;
+  border-radius: 50%;
+}
+
+.control-icon { color: #f8de7e;}
+
 /* UI control buttons */
 #wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin: 50px 0 10px 20px;
+  width: 100%;
 }
 
-#controls {
-  display: inline-grid;
-  grid-column-gap: 0;
-  align-self: end;
+.controls {
+  display: inline-block;
+  padding: 25px;
 }
 
-.upBtn {
-  grid-column-start: 2;
-}
-
-.leftBtn {
-  grid-column-start: 1;
-}
-
-.rightBtn {
-  grid-column-start: 3;
-}
 
 .btn {
   background-color: #d25068;
@@ -366,7 +362,7 @@ div {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 25px;
   margin: 4px 2px;
   border-radius: 50%;
 }
@@ -437,19 +433,41 @@ div {
 }
 
 @media only screen and (min-width: 768px){
-  #wrapper {
+  .controls {
     display: none;
   }
 
   .difficulty-buttons {
     margin: 0 120px;
   }
+
+  .icon-container { display: none;}
 }
 
 @media only screen and (max-width: 768px){
   #wrapper {
-    margin-top: 70px;
+    margin-left: 20px;
   }
+
+  .controls .upBtn {
+    margin-left: 240px;
+  }
+
+  .key { display: none;}
+}
+
+@media only screen and (max-width: 600px) {
+.grid {
+  margin-left: 10px;
+}
+
+#wrapper {
+  margin-left: 10px;
+}
+
+.controls .upBtn {
+  margin-left: 150px;
+}
 }
 
 #error-msg {
