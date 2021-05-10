@@ -19,8 +19,8 @@
     <div class="menu">
       <div class="menu-content">
         <h2 class="t-ucase">rules</h2>
-        <p class="rules"> Please use the <b class="key">UP</b> key to rotate your tetromino, and <b class="key">LEFT</b>
-          and <b class="key">RIGHT</b> to <br> move across the board. Pressing <b class="key">DOWN</b> will speed up the
+        <p class="rules"> Please use the <b class="key">UP</b><span class="icon-container"><i class="control-icon fas fa-sync"></i></span> key to rotate your tetromino, and <b class="key">LEFT</b><span class="icon-container"><i class="control-icon fas fa-caret-left"></i></span>
+          and <b class="key">RIGHT</b><span class="icon-container"><i class="control-icon fas fa-caret-right"></i></span> to <br> move across the board. Pressing <b class="key">DOWN</b><span class="icon-container"><i class="control-icon fas fa-caret-down"></i></span> will speed up the
           tetromino.</p>
         <button class="close fw-400">X</button>
       </div>
@@ -61,12 +61,10 @@
     </section>
   </main>
   <div id="wrapper">
-    <div id="controls">
-      <button class="upBtn btn"><i class="fas fa-caret-up"></i></button>
-      <button class="leftBtn btn"><i class="fas fa-caret-left"></i></button>    
-      <button class="downBtn btn"><i class="fas fa-caret-down"></i></button>
-      <button class="rightBtn btn"><i class="fas fa-caret-right"></i></button>
-    </div>
+    <div class="controls"><button class="leftBtn btn"><i class="fas fa-caret-left"></i></button></div>    
+    <div class="controls"><button class="downBtn btn"><i class="fas fa-caret-down"></i></button></div>
+    <div class="controls"><button class="rightBtn btn"><i class="fas fa-caret-right"></i></button></div>
+    <div class="controls"><button class="upBtn btn"><i class="fas fa-sync"></i></button></div>
   </div>
   <script src="app.js" charset="utf-8"></script>
 </body>

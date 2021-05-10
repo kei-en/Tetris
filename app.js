@@ -13,6 +13,7 @@
   const span = document.getElementsByClassName('close')[0]
   const scoreDisplay = document.querySelector('.score-display')
   const linesDisplay = document.querySelector('.lines-score')
+  const errorMessage = document.getElementById("error-msg")
   let currentIndex = 0
   let currentRotation = 0
   const width = 10
@@ -165,6 +166,7 @@
 
     for (const radioBtn of radioBtns) {
       if(radioBtn.checked) {
+        errorMessage.style.display = 'none'
         if(radioBtn.value === "easyBtn") {
           if (timerId) {
             clearInterval(timerId)
@@ -198,10 +200,9 @@
       } 
       else {
         errorTxt = "Please select difficulty level."
-        break
       }     
     }
-    document.getElementById("error-msg").innerHTML = "<p>" + errorTxt + "</p>"
+    errorMessage.innerHTML = "<p>" + errorTxt + "</p>"
   })
 
   function difficulty(interval) {
@@ -268,7 +269,8 @@
     if (current.some(index => squares[currentPosition + index].classList.contains('block2'))) {
       scoreDisplay.innerHTML = 'end'
       clearInterval(timerId)
-      setTimeout("location.reload()", 3000)
+      alert("GameOver\nYour Score: " + score + "\nLines Cleared: " + lines)
+      setTimeout("location.reload()")
     }
   }
 
