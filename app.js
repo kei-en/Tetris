@@ -7,9 +7,7 @@
   const grid = createGrid();
   let squares = Array.from(grid.querySelectorAll('div'))
   const startBtn = document.querySelector('.button')
-  const easyBtn = document.querySelector('#easy')
-  const mediumBtn = document.querySelector('#medium')
-  const difficultBtn = document.querySelector('#difficult')
+  const radioBtns = document.querySelectorAll('input[name="difficulty"]')
   const hamburgerBtn = document.querySelector('.toggler')
   const menu = document.querySelector('.menu')
   const span = document.getElementsByClassName('close')[0]
@@ -162,30 +160,48 @@
   }
 
   startBtn.addEventListener('click', () => {
-    if (timerId) {
-      clearInterval(timerId)
-      timerId = null
-    } else {
-      draw()
-      timerId = setInterval(moveDown, 1000)
-      nextRandom = Math.floor(Math.random() * theTetrominoes.length)
-      displayShape()
+
+    let errorTxt = ""
+
+    for (const radioBtn of radioBtns) {
+      if(radioBtn.checked) {
+        if(radioBtn.value === "easyBtn") {
+          if (timerId) {
+            clearInterval(timerId)
+            timerId = null
+          } else {
+            difficulty(1000)
+            menu.style.display = 'none'
+          }
+          break
+        }
+        else if(radioBtn.value === "mediumBtn") {
+          if (timerId) {
+            clearInterval(timerId)
+            timerId = null
+          } else {
+            difficulty(500)
+            menu.style.display = 'none'
+          }
+          break
+        }
+        else if(radioBtn.value === "difficultBtn") {
+          if (timerId) {
+            clearInterval(timerId)
+            timerId = null
+          } else {
+            difficulty(200)
+            menu.style.display = 'none'
+          }
+          break
+        }        
+      } 
+      else {
+        errorTxt = "Please select difficulty level."
+        break
+      }     
     }
-  })
-
-  easyBtn.addEventListener('click', () => {
-    difficulty(1000)
-    menu.style.display = 'none'
-  })
-
-  mediumBtn.addEventListener('click', () => {
-    difficulty(500)
-    menu.style.display = 'none'
-  })
-  
-  difficultBtn.addEventListener('click', () => {
-    difficulty(200)
-    menu.style.display = 'none'
+    document.getElementById("error-msg").innerHTML = "<p>" + errorTxt + "</p>"
   })
 
   function difficulty(interval) {

@@ -22,16 +22,27 @@
         <p class="rules"> Please use the <b class="key">UP</b> key to rotate your tetromino, and <b class="key">LEFT</b>
           and <b class="key">RIGHT</b> to <br> move across the board. Pressing <b class="key">DOWN</b> will speed up the
           tetromino.</p>
-        <button class="close fw-400">X</button><br>
-        <button class="difficulty t-ucase" id="easy">Easy</button>
-        <button class="difficulty t-ucase" id="medium">Medium</button>
-        <button class="difficulty t-ucase" id="difficult">Difficult</button>
+        <button class="close fw-400">X</button>
       </div>
     </div>
   </div>
   <header>
     <h1 class="fw-300 t-ucase">Welcome <br><span class="fw-400 t-wide t-big t-ucase">to tetris</span></h1>
   </header>
+  <div class="difficulty-buttons">
+    <label for="easyBtn" class="container">Easy
+      <input type="radio" id="easyBtn" name="difficulty" value="easyBtn">
+      <span class="checkmark"></span>      
+    </label>
+    <label for="mediumBtn" class="container">Medium
+      <input type="radio" id="mediumBtn" name="difficulty" value="mediumBtn">
+      <span class="checkmark"></span>
+    </label>
+    <label for="difficultBtn" class="container">Difficult
+      <input type="radio" id="difficultBtn" name="difficulty" value="difficultBtn">
+      <span class="checkmark"></span>
+    </label>
+  </div>
   <main class="game-area">
     <div class="game">
       <div class="grid"></div>
@@ -44,7 +55,8 @@
         </div>
         <h2 class="lines-display fw-400 t-ucase">Lines:<span class="lines-score">0</span></h2>
       </div>
-      <button class="button t-ucase" href="#">Start / Pause</button>
+      <div id="error-msg"></div>
+      <button class="button t-ucase" href="#">Play / Pause</button>
       <small class='footer t-ucase'>made with love by Kei En</small><br>
     </section>
   </main>
