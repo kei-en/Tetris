@@ -493,7 +493,7 @@ div {
 }
 
 .leftBtn, .rightBtn {
-  border-radius: 20%;
+  border-radius: 40%;
 }
 
 #error-msg {
