@@ -474,13 +474,11 @@ div {
 
 #wrapper {
   margin-left: 10px;
+  width: 90%;
 }
 .rightBtn {
   margin-left: 255px;  
-}
-.right {
-  margin-right: 15px;
-}  
+} 
 
 .centeredBtn {
   margin-right: auto;
