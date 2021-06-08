@@ -131,7 +131,7 @@ div {
   line-height: 23px;
   font-size: 10px;
   display: block;
-  margin: 30px;
+  margin: 20px;
   text-shadow: -1px -1px 0 #a84155;
   background: #d25068;
   border: 1px solid #d25068;
@@ -351,7 +351,7 @@ div {
 
 .controls {
   display: inline-block;
-  padding: 15px;
+  padding: 10px 15px;
 }
 
 
@@ -365,7 +365,7 @@ div {
   text-decoration: none;
   display: inline-block;
   font-size: 25px;
-  margin: 4px 2px;
+  margin: 3px 2px;
   border-radius: 50%;
 }
 
@@ -475,7 +475,7 @@ div {
   margin-left: 10px;
 }
 .rightBtn {
-  margin-left: 260px;
+  margin-left: 255px;
 }
 
 .centeredBtn {
@@ -492,9 +492,13 @@ div {
 }
 }
 
+.leftBtn, .rightBtn {
+  border-radius: 20%;
+}
+
 #error-msg {
   display: inline-block;
   color: #d25068;
+  font-size: 1.3rem;
   width: 100%;
-  margin-top: 20px;
 }
