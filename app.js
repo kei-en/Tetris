@@ -256,6 +256,18 @@
   //Rotate the Tetromino
   function rotate() {
     undraw()
+    const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1)
+    const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
+
+    if(theTetrominoes[3] && current.every(index => (currentPosition + index) % width === width - 1)){
+      currentPosition -= 1  
+    }
+    if (isAtRightEdge) {
+      currentPosition -= 1
+    }
+    if (isAtLeftEdge) {
+      currentPosition += 1
+    }
     currentRotation++
     if (currentRotation === current.length) {
       currentRotation = 0
