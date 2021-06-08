@@ -12,9 +12,10 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: auto;
   max-width: 60rem;
+  width: 100%;
   color: #d8edea;
   background: radial-gradient(
     circle,
