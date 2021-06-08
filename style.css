@@ -475,7 +475,12 @@ div {
   margin-left: 10px;
 }
 .rightBtn {
-  margin-left: 270px;
+  margin-left: 260px;
+}
+
+.centeredBtn {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .downBtn {

@@ -166,7 +166,7 @@
 
     for (const radioBtn of radioBtns) {
       if(radioBtn.checked) {
-        errorMessage.style.display = 'none'
+        errorMessage.style.visibility = 'hidden'
         if(radioBtn.value === "easyBtn") {
           if (timerId) {
             clearInterval(timerId)
