@@ -487,7 +487,8 @@ body {
   margin-right: 10px;
 }
 .controls .rightBtn {
-  margin-left: 255px;  
+  margin-left: 255px;
+  padding-right: 20px;
 } 
 
 .centeredBtn {
