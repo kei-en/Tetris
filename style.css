@@ -475,6 +475,9 @@ div {
 }
 
 @media only screen and (max-width: 600px) {
+body {
+  padding-right: 20px;
+ }
 .grid {
   margin-left: 10px;
 }
